@@ -97,8 +97,15 @@ const loadWindow = () =>
         print(hashRateString,"hashRate")
     }
 
-    // // fetch account balance
-    // async function 
+    // fetch account balance
+    async function fetchAccountBalance(address)
+    {
+        let url = `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=YourApiKeyToken`
+        let response = await fetch(url)
+        let balanceData = await response.json()
+        let accountBalance = "Your account balance is: "+balanceData.result
+        print(accountBalance,"accountBalance")
+    }
    
     // function to print data to html
     const print = (printString,elementId) =>
@@ -106,6 +113,19 @@ const loadWindow = () =>
         const element = document.getElementById(elementId)
         element.innerHTML = printString
     }
+
+    // Balance Check Form
+    let form = document.getElementById("balanceCheck")
+    form.addEventListener("submit",function(e)
+    {
+        e.preventDefault()
+        let accountAddress = document.getElementById("inputAddress").value
+        
+        fetchAccountBalance(accountAddress).catch(err =>
+            {
+                console.log("Error in fetchAccountBalance()")
+            })
+    })
 
     // Toggle Button
     let element = document.getElementById("toggleBtn")

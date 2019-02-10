@@ -1,3 +1,23 @@
+.box{
+  margin: 1em;
+}
+.row {
+   /* border-bottom: 1em; */
+   border-bottom-color:whitesmoke;
+   border-bottom-style: solid;
+   margin-bottom: 1em;
+ }
+
+.floatright {
+  float:right;
+  box-sizing: unset;
+  width:100em;
+  /* margin: 1em; */
+}
+.floatleft {
+  float:left;
+}
+
 /* Toggle button starts here */
 
 /* The switch - the box around the slider */
@@ -6,7 +26,7 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-    size: 50%;
+    /* size: 5%; */
   }
   
   /* Hide default HTML checkbox */
@@ -54,5 +74,14 @@
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
+
+  /* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 
   /* toggle button ends here */
