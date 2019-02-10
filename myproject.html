@@ -9,123 +9,91 @@
 </head>
 <body>
     <!--Navbar-->
-    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io">
-                <img src="logo.png" >
-              </a>
-          
-              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="logo.png" >
+                </a>
+            
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
           
             <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  My Etherscan 
-                </a>
-          
-                <!-- <a class="navbar-item">
-                  Documentation
-                </a> -->
-          
-                <!-- <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a> -->
-          
-                  <!-- <div class="navbar-dropdown">
+                <div class="navbar-start">
                     <a class="navbar-item">
-                      About
+                    My Etherscan 
                     </a>
-                    <a class="navbar-item">
-                      Jobs
-                    </a>
-                    <a class="navbar-item">
-                      Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                      Report an issue
-                    </a>
-                  </div> -->
                 </div>
-              </div>
+            </div>
                
-              <!-- Toggle Button -->
-              <div class="navbar-end">
+            <!-- Toggle Button -->
+            <div class="navbar-end">
                 <div class="navbar-item" >
-                    <label class="switch">
+                    <label class="switch" title="Enable live updates">
                         <input type="checkbox" id="toggleBtn">
                         <span class="slider round"></span>
                     </label>
-                  <!-- <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                      Log in
-                    </a>
-                  </div> -->
+            
                 </div>
-              </div>
             </div>
-          </nav>
+        </div>
+    </nav>
     <!--/Navbar-->
 
     <!--Main Content-->
-    <!-- <div class="box"> -->
+    
         <div class="level floatleft">
             <article class=" box ">
                 <!-- Market Capital-->
                 
                 <div class="message-body">
-                        <div class="title is-4 row">
+                    <div class="title is-4 row">
+        
+                        <a href="https://etherscan.io/stat/supply">MARKET CAP OF<span id="marketCap"></span></a>
+                        <br>
+                        <a href="https://etherscan.io/chart/etherprice" id="etherVal"><span id="precent"></span></a>
                 
-                                <a href="https://etherscan.io/stat/supply">MARKET CAP OF<span id="marketCap"></span></a>
+                    </div>
+                        
+                    <div class="row"></div>  
+                        <!--Last Block-->
+                        <div class="row">
+                            <a href="https://etherscan.io/blocks" >
+                                <b>Last Block</b>
+                                <br> 
+                            </a>
+                            <span id="lastBlock"></span>
+                        </div>
+                        <!--Transactions-->
+                        <div class="row">
+                            <a href="https://etherscan.io/txs">
+                                <b>Transactions</b>
                                 <br>
-                                <a href="https://etherscan.io/chart/etherprice" id="etherVal"><span id="precent"></span></a>
+                            </a>
+                            <span id="txnCount"></span>
                             
                         </div>
-                        
-                <div class="row"></div>  
-                    <!--Last Block-->
-                    <div class="row">
-                        <a href="https://etherscan.io/blocks" >
-                            <b>Last Block</b>
+                        <!--Hash Rate-->
+                        <div class="row">
+                            <a href="https://etherscan.io/chart/hashrate"><b>Hash Rate</b></a>
                             <br>
-                            
-                        </a>
-                        <span id="lastBlock"></span>
-                    </div>
-                    <!--Transactions-->
-                    <div class="row">
-                        <a href="https://etherscan.io/txs">
-                            <b>Transactions</b>
-                            <br>
-                            
-                        </a>
-                        <span id="txnCount"></span>
-                        
-                    </div>
-                    <!--Hash Rate-->
-                    <div class="row">
-                        <a href="https://etherscan.io/chart/hashrate"><b>Hash Rate</b></a>
-                        <br>
-                        <span id="hashRate"></span>
-                    </div>
-                    <!--Network Difficulty-->
-                    <div class="row">
-                            <a href="https://etherscan.io/chart/difficulty"><b>Network Difficulty</b></a>
-                            <br>
-                            <span id="networkDifficulty"></span>  
+                            <span id="hashRate"></span>
+                        </div>
+                        <!--Network Difficulty-->
+                        <div class="row">
+                                <a href="https://etherscan.io/chart/difficulty"><b>Network Difficulty</b></a>
+                                <br>
+                                <span id="networkDifficulty"></span>  
+                        </div>
                     </div>
                 </div>
             </article>
         </div>
+
         <div class="level">
             <article class="box floatright">
                 
@@ -135,7 +103,7 @@
                     <div class="row"></div>
                 
                     <input type="text" placeholder="Enter your address" id="inputAddress" class="input is-info">
-                <div class="row"></div>
+                    <div class="row"></div>
                     <input type="submit" value="Check" class="button is-info">
                     <div class="row"></div>
                     <label id="accountBalance" class="title is-6 "></label>
